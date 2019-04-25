@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,24 +26,14 @@ namespace DirectoryReplicate
 
         private void btnBrowseSource_Click(object sender, EventArgs e)
         {
-            var sourceFolder = new FolderBrowserDialog();
-            sourceFolder.ShowDialog();
-            if (!string.IsNullOrWhiteSpace(sourceFolder.SelectedPath))
-            {
-                source = sourceFolder.SelectedPath;
-                tbxSource.Text = source;
-            }
+            source = Utility.DirectoryHelper.GetDirectoryPathFromUser();
+            tbxSource.Text = source;
         }
 
         private void btnBrowseDestination_Click(object sender, EventArgs e)
         {
-            var destinationFolder = new FolderBrowserDialog();
-            destinationFolder.ShowDialog();
-            if (!string.IsNullOrWhiteSpace(destinationFolder.SelectedPath))
-            {
-                destination = destinationFolder.SelectedPath;
-                tbxDestination.Text = source;
-            }
+            destination = Utility.DirectoryHelper.GetDirectoryPathFromUser();
+            tbxDestination.Text = destination;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
