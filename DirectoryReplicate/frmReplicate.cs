@@ -66,7 +66,7 @@ namespace DirectoryReplicate
                 return;
             }
 
-
+            Utility.DirectoryHelper.ReplicateDirectory(_source, _destination, _includeSubdirectories);
         }
 
         private void btnViewLog_Click(object sender, EventArgs e)
