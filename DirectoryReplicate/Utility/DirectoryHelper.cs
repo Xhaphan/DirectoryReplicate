@@ -68,7 +68,14 @@ namespace DirectoryReplicate.Utility
                     //if (destinationFile == null) return true;
                 }
             });
-    }
+
+            /*
+             * After I finished the method, I wanted to know if there is a more efficient way of doing it.
+             * I did then find a nice and much cleaner way of doing it with a custom comparer.
+             * However, I felt like it would be cheating to use it here, since I did not come up with that solution
+             * myself.
+             */
+        }
 
         private static async Task DeleteFilesInDestination(string source, string destination, bool includeSubdirectories)
         {
