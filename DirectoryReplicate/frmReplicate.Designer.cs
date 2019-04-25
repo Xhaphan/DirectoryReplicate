@@ -43,6 +43,8 @@
             this.lblProgressBar = new System.Windows.Forms.Label();
             this.lblSourceError = new System.Windows.Forms.Label();
             this.lblDestinationError = new System.Windows.Forms.Label();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.cbxDoNotDelete = new System.Windows.Forms.CheckBox();
             this.frmReplicateBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.frmReplicateBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -115,7 +117,7 @@
             // 
             // btnViewLog
             // 
-            this.btnViewLog.Location = new System.Drawing.Point(140, 327);
+            this.btnViewLog.Location = new System.Drawing.Point(140, 352);
             this.btnViewLog.Name = "btnViewLog";
             this.btnViewLog.Size = new System.Drawing.Size(110, 38);
             this.btnViewLog.TabIndex = 5;
@@ -125,7 +127,7 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(501, 327);
+            this.btnExit.Location = new System.Drawing.Point(501, 352);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(110, 38);
             this.btnExit.TabIndex = 6;
@@ -166,9 +168,8 @@
             this.lblSourceError.ForeColor = System.Drawing.Color.DarkRed;
             this.lblSourceError.Location = new System.Drawing.Point(140, 9);
             this.lblSourceError.Name = "lblSourceError";
-            this.lblSourceError.Size = new System.Drawing.Size(174, 20);
+            this.lblSourceError.Size = new System.Drawing.Size(0, 20);
             this.lblSourceError.TabIndex = 999;
-            this.lblSourceError.Text = "Directory does not exist";
             this.lblSourceError.Visible = false;
             // 
             // lblDestinationError
@@ -177,10 +178,28 @@
             this.lblDestinationError.ForeColor = System.Drawing.Color.DarkRed;
             this.lblDestinationError.Location = new System.Drawing.Point(140, 85);
             this.lblDestinationError.Name = "lblDestinationError";
-            this.lblDestinationError.Size = new System.Drawing.Size(174, 20);
+            this.lblDestinationError.Size = new System.Drawing.Size(0, 20);
             this.lblDestinationError.TabIndex = 13;
-            this.lblDestinationError.Text = "Directory does not exist";
             this.lblDestinationError.Visible = false;
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Location = new System.Drawing.Point(144, 306);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(0, 20);
+            this.lblStatus.TabIndex = 1000;
+            // 
+            // cbxDoNotDelete
+            // 
+            this.cbxDoNotDelete.AutoSize = true;
+            this.cbxDoNotDelete.Location = new System.Drawing.Point(347, 155);
+            this.cbxDoNotDelete.Name = "cbxDoNotDelete";
+            this.cbxDoNotDelete.Size = new System.Drawing.Size(136, 24);
+            this.cbxDoNotDelete.TabIndex = 1001;
+            this.cbxDoNotDelete.Text = "&Do Not Delete";
+            this.cbxDoNotDelete.UseVisualStyleBackColor = true;
+            this.cbxDoNotDelete.CheckedChanged += new System.EventHandler(this.cbxDoNotDelete_CheckedChanged);
             // 
             // frmReplicateBindingSource
             // 
@@ -190,7 +209,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(651, 381);
+            this.ClientSize = new System.Drawing.Size(651, 405);
+            this.Controls.Add(this.cbxDoNotDelete);
+            this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.lblDestinationError);
             this.Controls.Add(this.lblSourceError);
             this.Controls.Add(this.lblProgressBar);
@@ -207,6 +228,7 @@
             this.Controls.Add(this.lblSource);
             this.Name = "frmReplicate";
             this.Text = "Replicate";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmReplicate_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.frmReplicateBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -230,6 +252,8 @@
         private System.Windows.Forms.BindingSource frmReplicateBindingSource;
         private System.Windows.Forms.Label lblSourceError;
         private System.Windows.Forms.Label lblDestinationError;
+        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.CheckBox cbxDoNotDelete;
     }
 }
 

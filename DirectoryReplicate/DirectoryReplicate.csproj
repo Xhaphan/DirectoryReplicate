@@ -59,6 +59,7 @@
     <Compile Include="Utility\Constants.cs" />
     <Compile Include="Utility\DirectoryHelper.cs" />
     <Compile Include="Utility\ExtentionMethods.cs" />
+    <Compile Include="Utility\LogHandler.cs" />
     <EmbeddedResource Include="frmReplicate.resx">
       <DependentUpon>frmReplicate.cs</DependentUpon>
     </EmbeddedResource>

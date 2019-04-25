@@ -7,16 +7,8 @@ using System.Threading.Tasks;
 
 namespace DirectoryReplicate.Utility
 {
-    static class ExtentionMethods
+    internal static class ExtensionMethods
     {
-        public static string[] GetFiles(this string path, bool includeSubdirectories)
-        {
-            if (!Directory.Exists(path)) return null;
-
-            return Directory.GetFiles(path, "*.*",
-                includeSubdirectories ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly);
-        }
-
         public static FileInfo[] GetFilesInfo(this string path, bool includeSubdirectories)
         {
             if (!Directory.Exists(path)) return null;
