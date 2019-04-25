@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +17,11 @@ namespace DirectoryReplicate.Utility
             dialog.ShowDialog();
 
             return !string.IsNullOrWhiteSpace(dialog.SelectedPath) ? dialog.SelectedPath : string.Empty;
+        }
+
+        public static bool ValidateDirectories(string[] paths)
+        {
+            return paths.All(Directory.Exists);
         }
     }
 }
