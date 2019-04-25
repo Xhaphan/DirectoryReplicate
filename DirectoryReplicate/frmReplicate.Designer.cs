@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblSource = new System.Windows.Forms.Label();
             this.lblDestination = new System.Windows.Forms.Label();
             this.tbxSource = new System.Windows.Forms.TextBox();
@@ -40,6 +41,8 @@
             this.pbReplicate = new System.Windows.Forms.ProgressBar();
             this.cbxSubdirectories = new System.Windows.Forms.CheckBox();
             this.lblProgressBar = new System.Windows.Forms.Label();
+            this.frmReplicateBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.frmReplicateBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblSource
@@ -92,6 +95,7 @@
             this.btnBrowseDestination.TabIndex = 5;
             this.btnBrowseDestination.Text = "Browse";
             this.btnBrowseDestination.UseVisualStyleBackColor = true;
+            this.btnBrowseDestination.Click += new System.EventHandler(this.btnBrowseDestination_Click);
             // 
             // btnReplicate
             // 
@@ -119,6 +123,7 @@
             this.btnExit.TabIndex = 8;
             this.btnExit.Text = "E&xit";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // pbReplicate
             // 
@@ -136,6 +141,7 @@
             this.cbxSubdirectories.TabIndex = 10;
             this.cbxSubdirectories.Text = "Include Sub Directories";
             this.cbxSubdirectories.UseVisualStyleBackColor = true;
+            this.cbxSubdirectories.CheckedChanged += new System.EventHandler(this.cbxSubdirectories_CheckedChanged);
             // 
             // lblProgressBar
             // 
@@ -145,6 +151,10 @@
             this.lblProgressBar.Size = new System.Drawing.Size(101, 20);
             this.lblProgressBar.TabIndex = 11;
             this.lblProgressBar.Text = "Progress Bar";
+            // 
+            // frmReplicateBindingSource
+            // 
+            this.frmReplicateBindingSource.DataSource = typeof(DirectoryReplicate.frmReplicate);
             // 
             // frmReplicate
             // 
@@ -165,6 +175,7 @@
             this.Controls.Add(this.lblSource);
             this.Name = "frmReplicate";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.frmReplicateBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,6 +195,7 @@
         private System.Windows.Forms.ProgressBar pbReplicate;
         private System.Windows.Forms.CheckBox cbxSubdirectories;
         private System.Windows.Forms.Label lblProgressBar;
+        private System.Windows.Forms.BindingSource frmReplicateBindingSource;
     }
 }
 
