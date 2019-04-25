@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +12,8 @@ namespace DirectoryReplicate
 {
     public partial class frmReplicate : Form
     {
+        private static readonly log4net.ILog log
+            = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         private string source;
         private string destination;
         private bool includeSubdirectories;
@@ -19,6 +21,7 @@ namespace DirectoryReplicate
         public frmReplicate()
         {
             InitializeComponent();
+            log.Info("Application started!");
         }
 
         private void btnBrowseSource_Click(object sender, EventArgs e)
@@ -46,6 +49,7 @@ namespace DirectoryReplicate
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+            log.Info("Application closed...");
         }
 
         private void cbxSubdirectories_CheckedChanged(object sender, EventArgs e)
